@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>终身维护承诺书</title>
+<style>
+  /* ============ 基础 ============ */
+  * { -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: #e9ecef;
+    font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+    padding: 76px 16px 48px;
+  }
+
+  /* ============ 工具栏 ============ */
+  .toolbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: #ffffff;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, .12);
+    z-index: 999;
+    padding: 0 16px;
+  }
+  .toolbar .hint {
+    color: #8a949e;
+    font-size: 13px;
+    margin-right: 6px;
+    white-space: nowrap;
+  }
+  .toolbar button {
+    padding: 8px 18px;
+    border: 1px solid #c9d2dc;
+    background: #f7f9fb;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #2c3e50;
+    cursor: pointer;
+    font-family: inherit;
+    transition: .18s;
+    white-space: nowrap;
+  }
+  .toolbar button:hover { background: #e8f0fe; border-color: #7aa7e0; }
+  .toolbar button:active { transform: translateY(1px); }
+  .toolbar button.primary {
+    background: #2c7be5; border-color: #2c7be5; color: #fff;
+  }
+  .toolbar button.primary:hover { background: #1a67d0; }
+
+  /* ============ A4 纸张 ============ */
+  #page {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 25mm 22mm;
+    margin: 0 auto;
+    background: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 0 2px 18px rgba(0, 0, 0, .16);
+    font-family: "宋体", SimSun, "Songti SC", "STSong", serif;
+    font-size: 12pt;
+    line-height: 1.75;
+    color: #000000;
+    outline: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  #page:focus { box-shadow: 0 2px 18px rgba(0,0,0,.16), 0 0 0 2px rgba(44,123,229,.28); }
+
+  /* ---- 正文排版 ---- */
+  #page .doc-title {
+    font-family: "黑体", SimHei, "Heiti SC", "STHeiti", sans-serif;
+    font-size: 18pt;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 4.5pt;
+    line-height: 1.5;
+    text-indent: 0;
+    margin: 0 0 9mm 0;
+  }
+  #page p {
+    margin: 0 0 6pt 0;
+    text-indent: 2em;
+    text-align: justify;
+    line-height: 1.75;
+  }
+  #page .sign-block {
+    margin-top: 12mm;
+    text-align: right;
+  }
+  #page .sign-block p {
+    text-indent: 0;
+    text-align: right;
+    margin: 0 8mm 6pt 0;
+  }
+
+  /* ============ 打印 ============ */
+  @media print {
+    @page { size: A4; margin: 0; }
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #ffffff !important;
+    }
+    .toolbar { display: none !important; }
+    #page {
+      box-shadow: none !important;
+      margin: 0 !important;
+      outline: none !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== 工具栏（不会被打印/导出） ===== -->
+<div class="toolbar">
+  <span class="hint">页面内容可直接编辑</span>
+  <button id="btnPreview" type="button">打印预览</button>
+  <button id="btnPrint" type="button" class="primary">打 印</button>
+  <button id="btnWord" type="button">导出 Word</button>
+  <button id="btnPdf" type="button">导出 PDF</button>
+</div>
+
+<!-- ===== A4 纸张（全局可编辑） ===== -->
+<div id="page" contenteditable="true" spellcheck="false">
+  <h1 class="doc-title">承诺书</h1>
+
+  <p>我单位XXXXXXXXXXXXXXXX于20XX年XX月XX日至20XX年XX月XX日在学院路（北新道―国安街）西侧便道进行污水管线改造，施工占用面积：47米×2米=94平方米。现就市政道路施工及后期维护安全责任、文明作业等事项，向贵单位郑重作出如下承诺：</p>
+
+  <p>一、我方严格按照《城市道路管理条例》相关规定及各部门审批内容规范组织人行道施工，不超审批面积、不超审批时限，不擅自改变临时占用用途。</p>
+
+  <p>二、我方严格落实唐山市《市政工程工地扬尘治理强化措施实施办法》要求，对施工范围采用标准围挡全封闭围蔽作业，按规范设置安全警示、导向标识，做好扬尘管控及现场保洁。</p>
+
+  <p>三、工程施工完毕后，我方主动通知相关负责人到场进行现场验收。对施工过程中损坏的自行车道、人行道及各类市政设施，我方严格按照原标准、原材质恢复至原貌；自竣工验收合格之日起，对本次施工及恢复部位承担终身维护责任，凡因本次施工原因出现沉降、破损、开裂、渗漏、塌陷等质量缺陷，我方无条件无偿修复，承担全部修复费用。</p>
+
+  <p>四、施工期间及终身维护责任期内，因我方施工不规范、回填压实不到位、恢复质量不达标、安全防护缺失等我方原因，造成通行群众、周边车辆、施工人员及第三方人身伤害或财产损失的，全部由我方承担赔偿责任及相应法律后果；因极端天气、自然灾害等不可抗力因素导致的损害，按相关法律规定处理。</p>
+
+  <p>五、我方承诺，本工程恢复区域主管单位可根据管理需要开展处置作业；如遇处置、施工安排，我方无条件予以配合，不附加任何条件。</p>
+
+  <p>六、其他未尽事宜，双方本着友好协商的原则解决；协商不成的，可向工程所在地人民法院提起诉讼。</p>
+
+  <div class="sign-block">
+    <p>承诺单位（盖章）：</p>
+    <p>项目负责人（签字）：</p>
+    <p>联系电话：</p>
+    <p>20XX年XX月XX日</p>
+  </div>
+</div>
+
+<!-- ===== PDF 引擎 ===== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+(function () {
+  "use strict";
+
+  var page = document.getElementById('page');
+
+  /* ---------- 1. 粘贴纯文本，避免带入杂样式 ---------- */
+  page.addEventListener('paste', function (e) {
+    var cd = e.clipboardData || window.clipboardData;
+    if (!cd) return;
+    var text = cd.getData('text/plain');
+    if (text) {
+      e.preventDefault();
+      try {
+        document.execCommand('insertText', false, text);
+      } catch (err) {
+        /* 失败则交给浏览器默认处理 */
+      }
+    }
+  });
+
+  /* ---------- 2. 公共样式（预览 / 导出共用） ---------- */
+  var PAGE_CSS = [
+    '@page { size: A4; margin: 0; }',
+    'html, body { margin: 0; padding: 0; background: #e9ecef; }',
+    '.page {',
+    '  width: 210mm; min-height: 297mm; padding: 25mm 22mm; margin: 0 auto;',
+    '  background: #fff; box-sizing: border-box;',
+    '  box-shadow: 0 2px 18px rgba(0,0,0,.16);',
+    '  font-family: "宋体", SimSun, "Songti SC", "STSong", serif;',
+    '  font-size: 12pt; line-height: 1.75; color: #000;',
+    '  word-wrap: break-word; overflow-wrap: break-word;',
+    '}',
+    '.page .doc-title {',
+    '  font-family: "黑体", SimHei, "Heiti SC", "STHeiti", sans-serif;',
+    '  font-size: 18pt; font-weight: 700; text-align: center;',
+    '  letter-spacing: 4.5pt; line-height: 1.5; text-indent: 0;',
+    '  margin: 0 0 9mm 0;',
+    '}',
+    '.page p { margin: 0 0 6pt 0; text-indent: 2em; text-align: justify; line-height: 1.75; }',
+    '.page .sign-block { margin-top: 12mm; text-align: right; }',
+    '.page .sign-block p { text-indent: 0; text-align: right; margin: 0 8mm 6pt 0; }'
+  ].join('\n');
+
+  /* ---------- 3. 打印预览（新窗口） ---------- */
+  document.getElementById('btnPreview').addEventListener('click', function () {
+    var contentHTML = page.innerHTML;
+    var win = window.open('', '_blank');
+    if (!win) {
+      alert('浏览器拦截了弹出窗口，请允许本页弹出窗口后重试。');
+      return;
+    }
+    var doc = '<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">' +
+      '<title>打印预览 - 终身维护承诺书</title><style>' +
+      PAGE_CSS +
+      '.bar { position: fixed; top: 0; left: 0; right: 0; height: 54px; display: flex;' +
+      ' align-items: center; justify-content: center; gap: 12px; background: #fff;' +
+      ' box-shadow: 0 1px 8px rgba(0,0,0,.12); z-index: 99;' +
+      ' font-family: "Microsoft YaHei", sans-serif; }' +
+      '.bar button { padding: 8px 20px; border: 1px solid #2c7be5; background: #2c7be5;' +
+      ' color: #fff; border-radius: 6px; font-size: 14px; cursor: pointer; font-family: inherit; }' +
+      '.bar button.ghost { background: #fff; color: #2c7be5; }' +
+      '.wrap { padding: 76px 0 48px; }' +
+      '@media print { html, body { background: #fff; }' +
+      ' .bar { display: none !important; } .wrap { padding: 0 !important; }' +
+      ' .page { box-shadow: none !important; margin: 0 !important; } }' +
+      '</style></head><body>' +
+      '<div class="bar"><button onclick="window.print()">打 印</button>' +
+      '<button class="ghost" onclick="window.close()">关 闭</button></div>' +
+      '<div class="wrap"><div class="page">' + contentHTML + '</div></div>' +
+      '</body></html>';
+    win.document.open();
+    win.document.write(doc);
+    win.document.close();
+    win.focus();
+  });
+
+  /* ---------- 4. 打印 ---------- */
+  document.getElementById('btnPrint').addEventListener('click', function () {
+    window.print();
+  });
+
+  /* ---------- 5. 导出 Word ---------- */
+  var WORD_CSS = [
+    '@page WordSection1 { size: 210.0mm 297.0mm; margin: 25.0mm 22.0mm 25.0mm 22.0mm; }',
+    'div.WordSection1 { page: WordSection1; }',
+    'body { font-family: "宋体", SimSun, serif; font-size: 12.0pt; line-height: 175%;' +
+      ' color: #000000; margin: 0; }',
+    'p { margin: 0 0 6.0pt 0; text-indent: 24.0pt; text-align: justify; line-height: 175%; }',
+    '.doc-title { font-family: "黑体", SimHei, sans-serif; font-size: 18.0pt; font-weight: bold;' +
+      ' text-align: center; letter-spacing: 4.5pt; text-indent: 0;' +
+      ' margin: 0 0 9.0mm 0; line-height: 150%; }',
+    '.sign-block { margin-top: 12.0mm; text-align: right; }',
+    '.sign-block p { text-indent: 0; text-align: right; margin: 0 8.0mm 6.0pt 0; }'
+  ].join('\n');
+
+  function downloadBlob(blob, filename) {
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () {
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, 1200);
+  }
+
+  document.getElementById('btnWord').addEventListener('click', function () {
+    var content = page.innerHTML;
+    var html =
+      '<html xmlns:o="urn:schemas-microsoft-com:office:office" ' +
+      'xmlns:w="urn:schemas-microsoft-com:office:word" ' +
+      'xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8">' +
+      '<title>终身维护承诺书</title>' +
+      '<!--[if gte mso 9]><xml><w:WordDocument>' +
+      '<w:View>Print</w:View><w:Zoom>100</w:Zoom>' +
+      '<w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->' +
+      '<style>' + WORD_CSS + '</style></head><body>' +
+      '<div class="WordSection1">' + content + '</div></body></html>';
+
+    var blob = new Blob(['\ufeff' + html], {
+      type: 'application/msword;charset=utf-8'
+    });
+    downloadBlob(blob, '终身维护承诺书.doc');
+  });
+
+  /* ---------- 6. 导出 PDF ---------- */
+  document.getElementById('btnPdf').addEventListener('click', function () {
+    if (typeof window.html2pdf === 'undefined') {
+      alert('PDF 组件未能加载（可能网络不通）。\n请改用【打印】按钮，在打印对话框中选择“另存为 PDF”。');
+      return;
+    }
+
+    var oldShadow = page.style.boxShadow;
+    var oldOutline = page.style.outline;
+
+    // 导出时去掉阴影，保证 PDF 页面干净、尺寸精确为 210mm
+    page.style.boxShadow = 'none';
+    page.style.outline = 'none';
+
+    var opt = {
+      margin: 0,
+      filename: '终身维护承诺书.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: '#ffffff',
+        logging: false,
+        scrollX: 0,
+        scrollY: -window.scrollY
+      },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak: { mode: ['css', 'legacy'] }
+    };
+
+    var restore = function () {
+      page.style.boxShadow = oldShadow;
+      page.style.outline = oldOutline;
+    };
+
+    window.html2pdf().set(opt).from(page).save().then(restore).catch(function (err) {
+      restore();
+      alert('PDF 导出失败：' + (err && err.message ? err.message : err) +
+        '\n请改用【打印】按钮，在打印对话框中选择“另存为 PDF”。');
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
